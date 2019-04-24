@@ -13,9 +13,15 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime" }
         - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Name'
-          name: "name"
-          widget: string
-  - name: "posts"
-    label: "Posts"
-    preview_path: "blog/{{slug}}"
+        - {label: 'Name', name: "name", widget: string}
+
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Post"
+    folder: "pages/blog"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post.template"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
