@@ -1,0 +1,39 @@
+@tailwind preflight;
+@tailwind utilities;
+@tailwind screens;
+@tailwind components;
+
+.bg-cyan-300 {
+    background-color: config('colors.primary');
+}
+
+@media (min-width: 576px) {
+.sm\:pt-24 {
+    padding-top: 6rem;
+}
+.pb-56 {
+    padding-bottom: 14rem;
+}
+.pt-32 {
+    padding-top: 3rem;
+}
+}
+.py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.-mt-56 {
+    margin-top: -14rem;
+}
+.py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
