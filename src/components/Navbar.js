@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Navbar = () => (
     <nav class="absolute pin-t w-full">
         <div class="container relative">
@@ -7,10 +9,10 @@ const Navbar = () => (
             </div>
             <div class="relative w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between pt-4 sm:h-16">
                 <div class="my-2 sm:my-0">
-                    <a href="#" class="no-underline inline-flex items-center text-white px-2 py-2 hover:bg-dark-200 rounded transition hover:-translateY-sm uppercase font-bold text-xs">Home</a>
-                    <a href="#" class="no-underline inline-flex items-center text-white px-2 py-2 hover:bg-dark-200 rounded transition hover:-translateY-sm uppercase font-bold text-xs" data-event="ClickSubmit" data-location="header">About</a>
-                    <a href="#" class="no-underline inline-flex items-center text-white px-2 py-2 hover:bg-dark-200 rounded transition hover:-translateY-sm uppercase font-bold text-xs" data-event="ClickSubmit" data-location="header">Now</a>
-                    <a href="#" class="no-underline inline-flex items-center text-white px-2 py-2 hover:bg-dark-200 rounded transition hover:-translateY-sm uppercase font-bold text-xs" data-event="ClickPopular" data-location="header">Blog</a>
+                    <Link href="/"><a class="no-underline inline-flex items-center text-white px-2 py-2 hover:bg-dark-200 rounded transition hover:-translateY-sm uppercase font-bold text-xs">Home</a></Link>
+                    <Link href="/about"><a class="no-underline inline-flex items-center text-white px-2 py-2 hover:bg-dark-200 rounded transition hover:-translateY-sm uppercase font-bold text-xs" data-location="header">About</a></Link>
+                    <Link href="/now"><a class="no-underline inline-flex items-center text-white px-2 py-2 hover:bg-dark-200 rounded transition hover:-translateY-sm uppercase font-bold text-xs" data-location="header">Now</a></Link>
+                    <Link href="/blog"><a class="no-underline inline-flex items-center text-white px-2 py-2 hover:bg-dark-200 rounded transition hover:-translateY-sm uppercase font-bold text-xs" data-location="header">Blog</a></Link>
                 </div>
                 <div class="flex items-center">
                     <form action="#" method="GET" class="mr-2 md:mr-8">
