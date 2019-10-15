@@ -1,5 +1,5 @@
-import Title from '../title'
-import Separator from '../separator'
+import Title from '../Title'
+import Separator from '../Separator'
 import BlogCard from '../BlogCard'
 
 const BlogSection = (props) => (

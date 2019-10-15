@@ -1,5 +1,5 @@
-import Title from '../title'
-import Subtitle from '../subtitle'
+import Title from '../Title'
+import Subtitle from '../Subtitle'
 
 const ProfileCard = () => {
     return (
