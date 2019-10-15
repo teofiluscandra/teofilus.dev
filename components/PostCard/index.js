@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const BlogCard = (props) => {
+const PostCard = (props) => {
     const {attributes: attr, readingTime} = props
     return (
         <div className="w-full lg:flex my-3">
@@ -31,4 +31,4 @@ const BlogCard = (props) => {
     )
 }
 
-export default BlogCard;
+export default PostCard;
