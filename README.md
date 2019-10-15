@@ -1,6 +1,6 @@
 # NextJS + Tailwind CSS
 
-## Boilerplate for Integrate NextJS + Netlify CMS + Tailwind CSS using PostCSS
+## Boilerplate for Integrate NextJS + Tailwind + .md Loader to write a blog post
 
 You can deploy to netlify and set automatically deploy with Github.
 
