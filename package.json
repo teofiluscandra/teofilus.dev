@@ -34,5 +34,9 @@
     "next-compose-plugins": "^2.2.0",
     "raw-loader": "^3.1.0",
     "tailwindcss": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teofiluscandra/teofilus-next"
   }
 }

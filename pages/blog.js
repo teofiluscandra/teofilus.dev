@@ -1,5 +1,5 @@
-import Layout from '../components/Layout'
-import BlogSection from '../components/BlogSection'
+import Layout from '../components/Layout';
+import BlogSection from '../components/BlogSection';
 import { withNoBody, withReadingTime } from '../utils/post-utils';
 import frontMatter from '../utils/front-matter';
 import importAll from '../utils/import-all';
@@ -16,7 +16,6 @@ Blog.getInitialProps = async function() {
         .map(frontMatter)
         .map(withNoBody)
         .map(withReadingTime)
-
     return { posts };
 }
 

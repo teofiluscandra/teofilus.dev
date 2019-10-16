@@ -1,6 +1,7 @@
-const withCSS = require('@zeit/next-css')
+const withCSS = require('@zeit/next-css');
 const withPlugins = require('next-compose-plugins');
-const jdown = require('jdown') 
+const readingTime = require('./utils/reading-time');
+const jdown = require('jdown');
 
 module.exports = withPlugins(
     [
@@ -29,13 +30,13 @@ module.exports = withPlugins(
             const posts = [] // build up array of objects for the top level list
             Object.entries(content).forEach(([filename, fileContent]) => {
               // the filename becomes the slug
-              paths[`/post/${filename}`] = { page: '/post/[slug]', query: { 
-                  slug: filename, 
+              paths[`/post/${fileContent.slug}`] = { page: '/post/[slug]', query: { 
+                  readingTime: readingTime(fileContent.contents),
                   ...fileContent 
                 } 
               }
             })
-            console.log(paths)
+            
             return paths
         }
     }
