@@ -35,6 +35,7 @@ module.exports = withPlugins(
                 } 
               }
             })
+            console.log(paths)
             return paths
         }
     }

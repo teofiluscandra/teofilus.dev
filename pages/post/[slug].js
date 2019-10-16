@@ -6,7 +6,7 @@ import compose from '../../utils/compose';
 import Link from 'next/link';
 
 const Post = (props) => {
-    if(!props.post) return <Error statusCode={404} />
+    //if(!props.post) return <Error statusCode={404} />
     
     const { post } = props;
     return (
