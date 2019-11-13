@@ -10,7 +10,7 @@ const Title = props => {
                     }
                 `}
             </style>
-            <h1 className="text-black font-bold is-display-2 mb-2">{props.title || "Section"}</h1>
+            <h1 className="text-black font-bold is-display-2 mb-2">{props.title || "No Title"}</h1>
         </>
     )
 }

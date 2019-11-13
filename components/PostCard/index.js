@@ -20,7 +20,7 @@ const PostCard = (props) => {
                 </Link>
                 </div>
                 <div className="flex items-center">
-                <img className="w-10 h-10 rounded-full mr-4" src="/static/profile_400x400.jpg" alt="Photo of Author"></img>
+                <img className="w-10 h-10 rounded-full mr-4" src={process.env.URL_PHOTO} alt="Photo of Author"></img>
                 <div className="text-sm">
                     <p className="text-black leading-none">{attr.author}</p>
                     <p className="text-grey-dark">{attr.created_at}</p>

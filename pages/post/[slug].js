@@ -47,7 +47,7 @@ const Post = () => {
                     <hr className="border-b-2 border-gray-400 mb-8 mx-4"></hr>
 
                     <div className="flex w-full items-center font-sans px-4 py-12">
-                        <img className="w-10 h-10 rounded-full mr-4" src="/static/profile_400x400.jpg" alt="Avatar of the Author"></img>
+                        <img className="w-10 h-10 rounded-full mr-4" src={process.env.URL_PHOTO} alt="Avatar of the Author"></img>
                         <div className="flex-1 px-2">
                             <p className="text-base font-bold text-base md:text-xl leading-none mb-2">{post.author}</p>
                             <p className="text-gray-600 text-xs md:text-base">Everyday LOL</p>

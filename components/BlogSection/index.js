@@ -7,7 +7,7 @@ const BlogSection = (props) => (
         <Title title="Blog"/>
         <Separator />
         {props.posts.map((item, key) => {
-            return <PostCard {...item} key={key} />
+            if (item.attributes.status == 'published') return <PostCard {...item} key={key} />
         })}
     </>
 )

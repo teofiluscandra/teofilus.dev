@@ -2,6 +2,8 @@ const withCSS = require('@zeit/next-css');
 const withPlugins = require('next-compose-plugins');
 const readingTime = require('./utils/reading-time');
 const jdown = require('jdown');
+const webpack = require("webpack");
+require("dotenv").config();
 
 module.exports = withPlugins(
     [
@@ -13,9 +15,18 @@ module.exports = withPlugins(
                 test: /\.md$/i,
                 loader: ['raw-loader'],
             });
+
+            config.node = {
+                fs: 'empty'
+            }
+
+            const env = Object.keys(process.env).reduce((acc, curr) => {
+                acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
+                return acc;
+            }, {});
     
             // config.context = path.resolve(__dirname, './posts');
-    
+            config.plugins.push(new webpack.DefinePlugin(env));
             return config;
         },
         exportPathMap: async function() {
