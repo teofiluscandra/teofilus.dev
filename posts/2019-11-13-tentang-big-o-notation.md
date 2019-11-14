@@ -1,6 +1,6 @@
 ---
 title: Tentang Big-O Notation
-keywords: [computer-science]
+keywords: [cs, fundamental]
 preview: Sebuah penjelasan sederhana tentang Notasi O-Besar
 
 author: Teofilus Candra

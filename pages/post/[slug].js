@@ -50,7 +50,7 @@ const Post = () => {
                         <img className="w-10 h-10 rounded-full mr-4" src={process.env.URL_PHOTO} alt="Avatar of the Author"></img>
                         <div className="flex-1 px-2">
                             <p className="text-base font-bold text-base md:text-xl leading-none mb-2">{post.author}</p>
-                            <p className="text-gray-600 text-xs md:text-base">Everyday LOL</p>
+                            <p className="text-gray-600 text-xs md:text-base">{process.env.SHORT_DESC}</p>
                         </div>
                         <div className="justify-end">
                             <Link href={'/about'}><button className="bg-transparent border border-gray-500 hover:border-teal-500 text-xs text-gray-500 hover:text-teal-500 font-bold py-2 px-4 rounded-full">Read More</button></Link>
