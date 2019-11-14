@@ -5,36 +5,3 @@
 @tailwind components;
 
 @tailwind utilities;
-
-.content {
-    font-size: 14px;
-}
-
-.content a {
-    color: blue;
-}
-
-.content p, .content ul, .content ol {
-    margin-bottom: 1rem;
-}
-
-.content ol {
-    list-style: decimal inside;
-}
-
-.content ul {
-    list-style: square inside;
-}
-
-.content > ol > li > p:nth-child(1) {
-    display: inline;
-}
-
-.content pre {
-    padding: 2rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    color: #285E61;
-    background-color: white;
-    font-weight: 600;
-}
