@@ -8,7 +8,7 @@ const Post = () => {
     const post = router.query;
     if(post == {}) return <Error statusCode={404} />
     return (
-        <Layout>
+        <Layout title={post.title} desc={post.preview}>
             <div className="bg-gray-100 font-sans leading-normal tracking-normal">
                 <div className="container w-full md:max-w-3xl mx-auto pt-5">
                     <div className="w-full px-4 text-xl text-gray-800 leading-normal">
