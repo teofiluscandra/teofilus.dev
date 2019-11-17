@@ -39,7 +39,7 @@ const Post = () => {
                         Tags: {
                             Array.isArray(post.keywords) &&
                                 post.keywords.map((word, key) => {
-                                    return <span className="text-base md:text-sm text-teal-500 no-underline" key={key}>{word} </span>
+                                    return <span className="text-base md:text-sm text-teal-500 no-underline" key={key}> {word} </span>
                                 })
                         }
                     </div>

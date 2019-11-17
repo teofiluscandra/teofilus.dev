@@ -23,10 +23,14 @@
 }
 
 .content pre {
-    padding: 2rem;
+    padding: 2rem 1rem;
     margin-bottom: 1rem;
     border-radius: 4px;
     color: #285E61;
     background-color: white;
     font-weight: 600;
+}
+
+.content pre code {
+    white-space: pre-wrap;
 }

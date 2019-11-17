@@ -14,16 +14,20 @@ const attributes = process.argv.slice(2).reduce(function(list, fileName) {
 
 const rules = {
     title:
-        'A title must be specified. Example: title="Creating delicious cheese bread"',
+        'Title is required',
     keywords:
-        'Keywords must be specified. Example: keywords="red, blue, green, yellow"',
+        'Keyword is required',
     preview:
-        'A preview must be specified. Example: preview="Reproducing my grandma cheese bread recipe!"',
+        'Preview is required',
 };
 
 Object.keys(rules).forEach(function(key) {
     if (!attributes[key]) {
         console.error(rules[key]);
+        process.exit();
+    }
+    if(attributes[key].value.includes(':')){
+        console.error("Value cannot contains ':'");
         process.exit();
     }
 });
@@ -32,7 +36,7 @@ const file = `${postsFolder}/${today}-${slugify(attributes['title'].value)}.md`;
 
 if (fs.existsSync(file)) {
     console.error(
-        'This post already exists! Create one with a different name.',
+        'This title is already exist',
     );
     return;
 }
@@ -62,6 +66,6 @@ fs.writeFile(file, postContent, function(err) {
         return;
     }
 
-    console.log('Post has been created! ⚡️');
+    console.log('Ready to write!');
     return;
 });

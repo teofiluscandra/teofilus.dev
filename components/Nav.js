@@ -4,11 +4,11 @@ const Nav = () => (
 	<nav className="flex items-center justify-between flex-wrap bg-teal-800 p-4 lg:px-20">
         <div className="w-full block flex-grow flex lg:items-center lg:w-auto">
             <div className="justify-center text-sm flex flex-grow items-center">
-                <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+                <a href="/" className="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
                     Home
                 </a>
                 <Link href="/blog">
-                    <a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                    <a className="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                         Blog
                     </a>
                 </Link>
@@ -16,13 +16,15 @@ const Nav = () => (
                     <img className="" src={process.env.URL_PHOTO} />
                 </a>
                 <Link href="/about">
-                    <a href="/about" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                    <a href="/about" className="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                         About
                     </a>
                 </Link>
-                <a href={process.env.URL_MEDIUM} className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-                    Medium
-                </a>
+                <Link href="/project">
+                    <a className="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                        Project
+                    </a>
+                </Link>
             </div>
         </div>
     </nav>
