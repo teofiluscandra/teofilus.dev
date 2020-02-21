@@ -23,7 +23,7 @@ Reverse Proxy ini adalah salah satu fitur dari Nginx.
 
 Pertama pasang Nginx di server kita
 
-``` $ sudo apt-get install nginx ```
+` $ sudo apt-get install nginx `
 
 Pastikan nginx terpasang dan berjalan dengan baik
 
