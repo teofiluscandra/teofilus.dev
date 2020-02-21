@@ -6,7 +6,7 @@ preview: Konfigurasi berulang yang kadang membuat lupa (bersama dengan penjelasa
 author: Teofilus Candra
 slug: 2019-11-17-konfigurasi-sederhana-server-nodejs-part-2-nginx-and-ssl
 created_at: 2019-11-17
-status: published
+status: draft
 ---
 
 Setelah pada tulisan sebelumnya  [(klik disini)](/2019-11-17-konfigurasi-sederhana-server-nodejs-part-1-nodejs-dan-pm2.md), NodeJS dan PM2 sudah terpasang dengan baik, dan bisa diakses melalui URL < ip >:< port >.  

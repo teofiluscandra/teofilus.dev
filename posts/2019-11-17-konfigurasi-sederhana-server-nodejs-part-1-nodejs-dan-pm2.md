@@ -6,7 +6,7 @@ preview: Konfigurasi berulang yang kadang membuat lupa (bersama dengan penjelasa
 author: Teofilus Candra
 slug: 2019-11-17-konfigurasi-sederhana-server-nodejs-part-1-nodejs-dan-pm2
 created_at: 2019-11-17
-status: published
+status: draft
 ---
 
 Setelah sewa Virtual Private Server untuk proyek iseng NodeJS, pasti yang dilakukan pertama kali adalah memasang NodeJS itu.  
