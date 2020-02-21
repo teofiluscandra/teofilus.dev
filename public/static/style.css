@@ -22,8 +22,8 @@
     display: inline;
 }
 
-.content pre {
-    padding: 2rem 1rem;
+.content code {
+    padding: .5rem;
     margin-bottom: 1rem;
     border-radius: 4px;
     color: #285E61;
@@ -31,6 +31,16 @@
     font-weight: 600;
 }
 
-.content pre code {
+.content code {
     white-space: pre-wrap;
+}
+
+.content pre {
+    background-color: white;
+    padding: 1rem 0rem;
+}
+
+.content h2 {
+    font-size: 26px;
+    font-weight: 600;
 }
