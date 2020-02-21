@@ -6,7 +6,7 @@ preview: Setelah running PM2 untuk nodejs
 author: Teofilus Candra
 slug: 2019-11-17-konfigurasi-server-nginx-ssl
 created_at: 2019-11-17
-status: published
+status: draft
 ---
 
 Setelah pada tulisan sebelumnya  [(klik disini)](/post/2019-11-17-konfigurasi-server-nodejs-dan-pm2), NodeJS dan PM2 sudah terpasang dengan baik, dan bisa diakses melalui URL < ip >:< port >.

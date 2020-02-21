@@ -6,7 +6,7 @@ preview: Sebuah penjelasan sederhana tentang Notasi O-Besar
 author: Teofilus Candra
 slug: 2019-11-13-tentang-big-o-notation
 created_at: 2019-11-13
-status: published
+status: draft
 ---
 
 Bagaimana kita mengukur keefektifan dari suatu algoritma atau suatu kode? Untuk mengukur efisien, mencakup banyak sumber daya, termasuk :

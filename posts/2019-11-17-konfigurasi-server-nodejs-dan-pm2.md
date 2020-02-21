@@ -6,7 +6,7 @@ preview: Beli VPS, terus konfigurasi
 author: Teofilus Candra
 slug: 2019-11-17-konfigurasi-server-nodejs-dan-pm2
 created_at: 2019-11-17
-status: published
+status: draft
 ---
 
 Setelah sewa Virtual Private Server dilakukan pertama kali adalah memasang hal-hal yang kita butuhkan. Artikel ini membahas manual deploy, bukan menggunakan Docker. Sewa VPS bisa dimanapun: Digital Ocean, Alibaba Cloud, Linode, Vultr, dll. Ada beberapa layanan pada VPS yang secara default kita bisa memilih untuk sudah dipasangkan service yang kita butuhkan dalam satu paket atau kita bisa memilih kosongan saja.
