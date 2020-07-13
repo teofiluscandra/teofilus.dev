@@ -4,13 +4,15 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react';
 import currency from '../lib/currency';
 import {URL_GITHUB, URL_IG, URL_TWITTER} from '../lib/constants';
+import {parseISO, format} from 'date-fns';
 
 const Index = () => {
     
     const [covidData, setCovidData] = useState({
         confirmed: '-----',
         recovered: '----',
-        deaths: '----'
+        deaths: '----',
+        lastUpdate: '-----'
     })
 
     useEffect(() => {
@@ -24,7 +26,8 @@ const Index = () => {
             setCovidData({
                 confirmed: item.confirmed.value,
                 recovered: item.recovered.value,
-                deaths: item.deaths.value
+                deaths: item.deaths.value,
+                lastUpdate: format(parseISO(item.lastUpdate), 'dd-MM-yyyy hh:mm OOOO')
             });
         }
 
@@ -64,6 +67,9 @@ const Index = () => {
                                 <h1 className="text-2xl">{currency(covidData.deaths)}</h1>
                                 <h5>Meninggal</h5>
                             </div>
+                        </div>
+                        <div className="mt-2">
+                            <h5 className="text-xs">Pembaruan Terakhir : {covidData.lastUpdate}</h5>
                         </div>
 
                         <div className="mt-5 mb-5">
