@@ -1,3 +1,5 @@
+import Alert from './Alert'
+
 type Props = {
     preview?: boolean
     children: React.ReactNode
@@ -6,8 +8,9 @@ type Props = {
 const Layout = ({ preview, children }: Props) => {
     return (
         <>
-            <div className="min-h-screen">
-                <h1 className="font-semibold">teofilus.dev</h1>
+            <div className="min-h-screen bg-accent-7">
+                <Alert preview={preview} />
+                <main>{children}</main>
             </div>
         </>
     )
