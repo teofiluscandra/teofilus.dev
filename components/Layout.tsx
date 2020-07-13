@@ -8,7 +8,7 @@ type Props = {
 const Layout = ({ preview, children }: Props) => {
     return (
         <>
-            <div className="min-h-screen bg-accent-7">
+            <div className="min-h-screen">
                 <Alert preview={preview} />
                 <main>{children}</main>
             </div>

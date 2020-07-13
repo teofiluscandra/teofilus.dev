@@ -17,7 +17,7 @@ const Alert = ({ preview }: Props) => {
         <div className="py-2 text-center text-sm">
           {preview && (
             <>
-              Stay safe and healty.
+             ⚠️  Stay safe and healthy.
             </>
           )}
         </div>
