@@ -12,6 +12,7 @@ const Index = () => {
         confirmed: '-----',
         recovered: '----',
         deaths: '----',
+        ongoing: '----',
         lastUpdate: '-----'
     })
 
@@ -24,9 +25,10 @@ const Index = () => {
             const data = await fetch('https://covid19.mathdro.id/api/countries/ID');
             const item = await data.json();
             setCovidData({
-                confirmed: item.confirmed.value,
-                recovered: item.recovered.value,
-                deaths: item.deaths.value,
+                confirmed: currency(item.confirmed.value),
+                recovered: currency(item.recovered.value),
+                deaths: currency(item.deaths.value),
+                ongoing: currency((parseInt(item.confirmed.value) - (parseInt(item.recovered.value) + parseInt(item.deaths.value))).toString()),
                 lastUpdate: format(parseISO(item.lastUpdate), 'dd-MM-yyyy hh:mm OOOO')
             });
         }
@@ -52,19 +54,19 @@ const Index = () => {
                         </div>
                         <div className="shadow flex text-center flex-wrap">
                             <div className="shadow border-white p-3 w-full xl:w-1/4">
-                                <h1 className="text-2xl">{currency(covidData.confirmed)}</h1>
+                                <h1 className="text-2xl">{covidData.confirmed}</h1>
                                 <h5>Terkonfirmasi</h5>
                             </div>
                             <div className="shadow border-white p-3 w-full xl:w-1/4">
-                                <h1 className="text-2xl">{currency((parseInt(covidData.confirmed) - (parseInt(covidData.recovered) + parseInt(covidData.deaths))).toString())}</h1>
+                                <h1 className="text-2xl">{covidData.ongoing}</h1>
                                 <h5>Dalam Perawatan</h5>
                             </div>
                             <div className="shadow border-white p-3 w-full xl:w-1/4">
-                                <h1 className="text-2xl">{currency(covidData.recovered)}</h1>
+                                <h1 className="text-2xl">{covidData.recovered}</h1>
                                 <h5>Sembuh</h5>
                             </div>
                             <div className="shadow border-white p-3 w-full xl:w-1/4">
-                                <h1 className="text-2xl">{currency(covidData.deaths)}</h1>
+                                <h1 className="text-2xl">{covidData.deaths}</h1>
                                 <h5>Meninggal</h5>
                             </div>
                         </div>
@@ -74,6 +76,7 @@ const Index = () => {
 
                         <div className="mt-5 mb-5">
                             <h1>Software Engineer & Co-op</h1>
+                            <h1>Bali, Indonesia</h1>
                             <a href={URL_GITHUB}>Github</a> . <a href={URL_IG}>Instagram</a> . <a href={URL_TWITTER}>Twitter</a>
                         </div>
                         <div className="text-center text-3xl">❤️</div>
