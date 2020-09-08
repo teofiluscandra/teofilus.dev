@@ -1,90 +1,73 @@
-import Layout from '../components/Layout'
-import Container from '../components/Container'
-import Head from 'next/head'
-import { useEffect, useState } from 'react';
-import currency from '../lib/currency';
-import {URL_GITHUB, URL_IG, URL_TWITTER} from '../lib/constants';
-import {parseISO, format} from 'date-fns';
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import { parseISO, format } from "date-fns";
+import { Box, Heading, SimpleGrid } from "@chakra-ui/core";
+
+import { Container } from "@/components/Container";
+import { DarkModeSwitch } from "@/components/DarkModeSwitch";
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
+import { CountBox } from "@/components/CountBox";
+import { formattingNumber } from "@/lib/formatting";
 
 const Index = () => {
-    
-    const [covidData, setCovidData] = useState({
-        confirmed: '-----',
-        recovered: '----',
-        deaths: '----',
-        ongoing: '----',
-        lastUpdate: '-----'
-    })
+  const defaultValue = "-----";
 
-    useEffect(() => {
-        setTimeout(() => {
-            document.getElementById('vegas')?.classList.toggle("text-shadow");
-        }, 3000);
+  const [covidData, setCovidData] = useState({
+    confirmed: defaultValue,
+    recovered: defaultValue,
+    deaths: defaultValue,
+    ongoing: defaultValue,
+    lastUpdate: defaultValue,
+  });
 
-        async function fetchData() {
-            const data = await fetch('https://covid19.mathdro.id/api/countries/ID');
-            const item = await data.json();
-            setCovidData({
-                confirmed: currency(item.confirmed.value),
-                recovered: currency(item.recovered.value),
-                deaths: currency(item.deaths.value),
-                ongoing: currency((parseInt(item.confirmed.value) - (parseInt(item.recovered.value) + parseInt(item.deaths.value))).toString()),
-                lastUpdate: format(parseISO(item.lastUpdate), 'dd-MM-yyyy hh:mm OOOO')
-            });
-        }
+  useEffect(() => {
+    async function fetchData() {
+      const data = await fetch("https://covid19.mathdro.id/api/countries/ID");
+      const item = await data.json();
+      setCovidData({
+        confirmed: formattingNumber(item.confirmed.value),
+        recovered: formattingNumber(item.recovered.value),
+        deaths: formattingNumber(item.deaths.value),
+        ongoing: formattingNumber(
+          (
+            parseInt(item.confirmed.value) -
+            (parseInt(item.recovered.value) + parseInt(item.deaths.value))
+          ).toString()
+        ),
+        lastUpdate: format(parseISO(item.lastUpdate), "dd-MM-yyyy hh:mm OOOO"),
+      });
+    }
 
-        fetchData();
+    fetchData();
+  }, []);
 
-    }, [])
+  return (
+    <Container>
+      <Head>
+        <title>👋Hey!</title>
+      </Head>
+      <Hero />
 
-    return (
-        <>
-            <Head>
-                <title>👋Hey!</title>
-            </Head>
-            <Layout preview={true}>
-                <Container>
-                    <div className="flex justify-center items-center h-screen">
-                        <h1 id="vegas" className="vegas-text">teofilus candra</h1>
-                    </div>
-                    
-                    <div className="font-mono shadow bg-white text-black p-5 rounded-sm -mt-40 mb-5">
-                        <div className="mb-5">
-                            <h1 className="font-semibold text-xl">Jumlah kasus COVID19 di Indonesia</h1>
-                        </div>
-                        <div className="shadow flex text-center flex-wrap">
-                            <div className="shadow border-white p-3 w-full xl:w-1/4">
-                                <h1 className="text-2xl">{covidData.confirmed}</h1>
-                                <h5>Terkonfirmasi</h5>
-                            </div>
-                            <div className="shadow border-white p-3 w-full xl:w-1/4">
-                                <h1 className="text-2xl">{covidData.ongoing}</h1>
-                                <h5>Dalam Perawatan</h5>
-                            </div>
-                            <div className="shadow border-white p-3 w-full xl:w-1/4">
-                                <h1 className="text-2xl">{covidData.recovered}</h1>
-                                <h5>Sembuh</h5>
-                            </div>
-                            <div className="shadow border-white p-3 w-full xl:w-1/4">
-                                <h1 className="text-2xl">{covidData.deaths}</h1>
-                                <h5>Meninggal</h5>
-                            </div>
-                        </div>
-                        <div className="mt-2">
-                            <h5 className="text-xs">Pembaruan Terakhir : {covidData.lastUpdate}</h5>
-                        </div>
+      <Box bg="teal.500" w="100%" p={4} color="white" marginTop="-10rem">
+        <Heading as="h4" size="md" my="1rem" textAlign="center">
+          Jumlah kasus COVID-19 di Indonesia
+        </Heading>
+        <SimpleGrid spacing={5} columns={[1, 4]}>
+          <CountBox title="Terkonfirmasi" count={covidData.confirmed} />
+          <CountBox title="Dalam Perawatan" count={covidData.ongoing} />
+          <CountBox title="Sembuh" count={covidData.recovered} />
+          <CountBox title="Meninggal" count={covidData.deaths} />
+        </SimpleGrid>
+        <Heading as="h6" size="xs" marginTop="1rem">
+          Pembaruan Terakhir : {covidData.lastUpdate}
+        </Heading>
+      </Box>
 
-                        <div className="mt-5 mb-5">
-                            <h1>Software Engineer & Co-op</h1>
-                            <h1>Bali, Indonesia</h1>
-                            <a href={URL_GITHUB}>Github</a> . <a href={URL_IG}>Instagram</a> . <a href={URL_TWITTER}>Twitter</a>
-                        </div>
-                        <div className="text-center text-3xl">❤️</div>
-                    </div>
-                </Container>
-            </Layout>
-        </>
-    )
-}
+      <Footer />
+      <DarkModeSwitch />
+    </Container>
+  );
+};
 
-export default Index
+export default Index;
