@@ -29,6 +29,7 @@
     "emotion-theming": "^10.0.27",
     "gray-matter": "^4.0.2",
     "next": "^9.4.4",
+    "next-seo": "^4.7.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "remark": "^12.0.0",
