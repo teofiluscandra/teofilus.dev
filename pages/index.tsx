@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { parseISO, format } from "date-fns";
-import { Box, Heading, SimpleGrid } from "@chakra-ui/core";
+import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 
 import { Container } from "@/components/Container";
 import { DarkModeSwitch } from "@/components/DarkModeSwitch";

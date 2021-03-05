@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/core";
+import { Box, Heading, Text } from "@chakra-ui/react";
 
 type Props = {
   title?: string;
