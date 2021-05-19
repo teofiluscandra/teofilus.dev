@@ -1,9 +1,9 @@
+import * as gtag from '@/lib/analytics';
 import { ChakraProvider } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import Router from 'next/router';
 import React from 'react';
-import * as gtag from 'src/lib/analytics';
 import SEO from '../seo.config';
 import theme from '../theme';
 
