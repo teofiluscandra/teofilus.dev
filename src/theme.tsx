@@ -15,8 +15,8 @@ const theme = extendTheme({
     bold: 700,
   },
   colors: {
-    primary: '#CD0000',
-    secondary: '#FFD900',
+    primary: '#ff6961',
+    secondary: '#fdfd96',
   },
 });
 

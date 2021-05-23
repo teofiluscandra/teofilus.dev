@@ -1,5 +1,5 @@
 import { BellIcon } from '@chakra-ui/icons';
-import { Box, HStack, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, HStack, Stack, Text } from '@chakra-ui/react';
 import * as React from 'react';
 
 export interface BannerProps {
@@ -14,7 +14,7 @@ const Banner: React.FC<BannerProps> = ({ text }: BannerProps) => {
         py="3"
         px={{ base: '3', md: '6', lg: '8' }}
         color="white"
-        bg={useColorModeValue('blue.400', 'blue.700')}
+        bg={'primary'}
         justifyContent="center"
         alignItems="center"
       >

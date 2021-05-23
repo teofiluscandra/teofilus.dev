@@ -1,7 +1,6 @@
 export const NAME = 'Teofilus Candra';
-export const DESC =
-  'Gusdurian | Developer Circles Lead Bali | Orang Indonesia, Tinggal di Bali, Pemerhati Isu Sosial dan Perekayasa Perangkat Lunak';
-export const URL_PHOTO = '/static/logo-web-teofilusdev.png';
+export const DESC = '';
+export const URL_PHOTO = '/static/logo-64x64.png';
 export const URL_ICON = '/static/worldwide.png';
 export const SHORT_DESC = 'Everyday LOL';
 export const URL_GITHUB = 'https://github.com/teofiluscandra';

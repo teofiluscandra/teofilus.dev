@@ -4,17 +4,18 @@ import Head from 'next/head';
 import { ReactNode } from 'react';
 import Footer from './Footer';
 
-type Props = {
+interface Props extends FlexProps {
   children?: ReactNode;
   title: string;
-  rest?: FlexProps;
-};
+}
 
-const Layout = ({ children, title, ...rest }: Props): JSX.Element => {
+const Layout = ({ children, title, ...props }: Props): JSX.Element => {
   return (
     <>
-      <Head>{title}</Head>
-      <Flex maxWidth="1150px" w="100%" direction="column" mx="auto" px={5} pt={'20'} pb={5} minHeight="90vh" {...rest}>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <Flex maxWidth="1150px" w="100%" direction="column" mx="auto" px={5} pt={'20'} pb={5} minHeight="90vh" {...props}>
         {children}
       </Flex>
       <DarkModeSwitch />

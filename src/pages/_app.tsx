@@ -2,10 +2,14 @@ import * as gtag from '@/lib/analytics';
 import { ChakraProvider } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
+import Head from 'next/head';
 import Router from 'next/router';
 import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import SEO from '../seo.config';
 import theme from '../theme';
+const queryClient = new QueryClient();
 
 function App({ Component, pageProps }: AppProps): React.ReactNode {
   React.useEffect(() => {
@@ -19,10 +23,16 @@ function App({ Component, pageProps }: AppProps): React.ReactNode {
   }, []);
 
   return (
-    <ChakraProvider resetCSS theme={theme}>
-      <DefaultSeo {...SEO} />
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <QueryClientProvider client={queryClient}>
+      <ChakraProvider resetCSS theme={theme}>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </Head>
+        <DefaultSeo {...SEO} />
+        <Component {...pageProps} />
+      </ChakraProvider>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 }
 
