@@ -37,7 +37,7 @@ const Nikah: NextPage<Props> = ({ title, image }: Props) => {
           ],
         }}
       />
-      <Banner text="Kami tidak mengelar resepsi publik dikarenakan sedang pandemi" />
+      <Banner />
       <Layout title="💒 Pawiwahan Yunita & Teofilus" maxW={'2xl'}>
         <Stack spacing={8} w="100%" align="center">
           <Heading

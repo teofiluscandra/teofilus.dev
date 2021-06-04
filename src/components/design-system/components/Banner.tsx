@@ -6,7 +6,7 @@ export interface BannerProps {
   text: string;
 }
 
-const Banner: React.FC<BannerProps> = ({ text }: BannerProps) => {
+const Banner = (): JSX.Element => {
   return (
     <Box as="section">
       <Stack
