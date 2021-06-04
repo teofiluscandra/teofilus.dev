@@ -4,6 +4,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import { Box, Heading, Img, Link, Stack, StackDivider, Text } from '@chakra-ui/react';
 import { Banner } from 'components/design-system';
 import { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 
 const Carousel = dynamic(() => import('@brainhubeu/react-carousel'), {
@@ -17,6 +18,25 @@ interface Props {
 const Nikah: NextPage<Props> = ({ title, image }: Props) => {
   return (
     <>
+      <NextSeo
+        title="Pawiwahan Yunita & Teofilus - 3 Juli 2021"
+        description="Nuwun wiyosipun manawi Gusti Ingkang Maha Agung amarengaken saha paring kalodhangan ing samudayanipun, kula sanget angajeng-ajeng rawuh panjenengan ing syukuran tuwin pawiwahan dhauping sri penganten anak kula."
+        openGraph={{
+          url: 'https://teofilus.dev/nikah',
+          title: 'Pawiwahan Yunita & Teofilus - 3 Juli 2021',
+          description:
+            'Nuwun wiyosipun manawi Gusti Ingkang Maha Agung amarengaken saha paring kalodhangan ing samudayanipun, kula sanget angajeng-ajeng rawuh panjenengan ing syukuran tuwin pawiwahan dhauping sri penganten anak kula.',
+          site_name: 'teofilus.dev',
+          images: [
+            {
+              url: 'https://teofilus.dev/static/icon-web-nikah.png',
+              width: 500,
+              height: 500,
+              alt: 'Foto Prewed',
+            },
+          ],
+        }}
+      />
       <Banner text="Kami tidak mengelar resepsi publik dikarenakan sedang pandemi" />
       <Layout title="💒 Pawiwahan Yunita & Teofilus" maxW={'2xl'}>
         <Stack spacing={8} w="100%" align="center">

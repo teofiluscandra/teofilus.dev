@@ -1,6 +1,6 @@
-import { BellIcon } from '@chakra-ui/icons';
-import { Box, HStack, Stack, Text } from '@chakra-ui/react';
+import { Box, HStack, Link, Stack } from '@chakra-ui/react';
 import * as React from 'react';
+import { FaDotCircle } from 'react-icons/fa';
 
 export interface BannerProps {
   text: string;
@@ -18,11 +18,28 @@ const Banner: React.FC<BannerProps> = ({ text }: BannerProps) => {
         justifyContent="center"
         alignItems="center"
       >
-        <HStack direction="row" spacing="3">
-          <Box as={BellIcon} fontSize="2xl" h="10" />
-          <Text fontWeight="medium" marginEnd="2">
-            {text}
-          </Text>
+        <HStack spacing="1">
+          <FaDotCircle />
+          <Link
+            flex={1}
+            py={2}
+            px={10}
+            fontSize={'md'}
+            rounded={'full'}
+            bg={'rgba(0,0,0,.5)'}
+            color={'white'}
+            isExternal
+            _hover={{
+              bg: 'secondary',
+              color: 'black',
+            }}
+            _focus={{
+              bg: 'secondary',
+              color: 'black',
+            }}
+          >
+            Live Streaming Click Here
+          </Link>
         </HStack>
       </Stack>
     </Box>
