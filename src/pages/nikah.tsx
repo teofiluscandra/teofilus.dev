@@ -217,11 +217,6 @@ const Nikah: NextPage<Props> = ({ title, image }: Props) => {
               }
             />
           </Carousel>
-          <Stack direction={'column'} spacing={1} textAlign="right" w="100%">
-            <Text>💌 Amplop</Text>
-            <Text>BCA: 4400014839</Text>
-            <Text>BNB / USDT (BEP20 BSC): 0xb1a70046e254daa7a452177ddd53046bcfc3721a</Text>
-          </Stack>
         </Stack>
       </Layout>
     </>
