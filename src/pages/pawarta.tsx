@@ -1,17 +1,17 @@
 import { Banner, MainWedding } from 'modules/wedding/';
 import { NextSeo } from 'next-seo';
 
-const Nikah = (): JSX.Element => {
+const Pawarta = (): JSX.Element => {
   return (
     <>
       <NextSeo
         title="Pawiwahan Yunita & Teofilus - 3 Juli 2021"
-        description="Nuwun wiyosipun manawi Gusti Ingkang Maha Agung amarengaken saha paring kalodhangan ing samudayanipun, kula sanget angajeng-ajeng rawuh panjenengan ing syukuran tuwin pawiwahan dhauping sri penganten anak kula."
+        description="Kanthi andhap asoring manah, kula sami nyuwun lumunturing samodra pangaksami, awit kula mboten saged ngaturi rawuhipun panjenengan ing peneguhan nenikahan anak kula karono pandemi Covid-19."
         openGraph={{
-          url: 'https://teofilus.dev/nikah',
+          url: 'https://teofilus.dev/pawarta',
           title: 'Pawiwahan Yunita & Teofilus - 3 Juli 2021',
           description:
-            'Nuwun wiyosipun manawi Gusti Ingkang Maha Agung amarengaken saha paring kalodhangan ing samudayanipun, kula sanget angajeng-ajeng rawuh panjenengan ing syukuran tuwin pawiwahan dhauping sri penganten anak kula.',
+            'Kanthi andhap asoring manah, kula sami nyuwun lumunturing samodra pangaksami, awit kula mboten saged ngaturi rawuhipun panjenengan ing peneguhan nenikahan anak kula karono pandemi Covid-19.',
           site_name: 'teofilus.dev',
           images: [
             {
@@ -24,9 +24,9 @@ const Nikah = (): JSX.Element => {
         }}
       />
       <Banner />
-      <MainWedding />
+      <MainWedding isPawarta />
     </>
   );
 };
 
-export default Nikah;
+export default Pawarta;
