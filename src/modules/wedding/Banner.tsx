@@ -35,7 +35,7 @@ const Banner = (): JSX.Element => {
           }}
         >
           <FaDotCircle />
-          <Text ml="2">Live Streaming Coming Soon</Text>
+          <Text ml="2">Live Streaming (3 Juli 2021)</Text>
         </Link>
       </Stack>
     </Box>
