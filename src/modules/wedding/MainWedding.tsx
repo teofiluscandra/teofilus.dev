@@ -228,7 +228,7 @@ const MainWedding = ({ isPawarta }: { isPawarta?: boolean }): JSX.Element => {
         </Carousel>
 
         <Box textAlign={'center'}>
-          <Box as={ImBullhorn} color="secondary" fontSize="xl" />
+          <Box as={ImBullhorn} color="secondary" fontSize="xl" display="inline-block" />
           <Text mt="3" fontSize="xl" fontWeight="bold" maxW="30rem">
             Bagi para tamu undangan diharapkan mengikuti protokol pencegahan COVID-19.
           </Text>
