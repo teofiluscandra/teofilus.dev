@@ -1,9 +1,9 @@
 import Layout from '@/components/layout/Layout';
 import { autoplayPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import { Alert, Box, Heading, Img, Link, Stack, StackDivider, Text } from '@chakra-ui/react';
+import { Alert, Box, Heading, Img, Link, Stack, StackDivider, Text, useColorModeValue } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
-import { ImQuotesLeft } from 'react-icons/im';
+import { ImBullhorn, ImQuotesLeft } from 'react-icons/im';
 const Carousel = dynamic(() => import('@brainhubeu/react-carousel'), {
   ssr: false,
 });
@@ -15,6 +15,7 @@ const PageHeading = ({ title }: { title: string }) => (
     lineHeight="1.4"
     fontWeight="bold"
     textAlign="center"
+    color={useColorModeValue('rgba(0,0,0,.9)', 'rgba(255,255,255)')}
   >
     {title}
   </Heading>
@@ -225,6 +226,13 @@ const MainWedding = ({ isPawarta }: { isPawarta?: boolean }): JSX.Element => {
             }
           />
         </Carousel>
+
+        <Box textAlign={'center'}>
+          <Box as={ImBullhorn} color="secondary" fontSize="xl" />
+          <Text mt="3" fontSize="xl" fontWeight="bold" maxW="30rem">
+            Bagi para tamu undangan diharapkan mengikuti protokol pencegahan COVID-19.
+          </Text>
+        </Box>
       </Stack>
     </Layout>
   );
