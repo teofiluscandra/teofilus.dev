@@ -1,7 +1,5 @@
-import { URL_GITHUB, URL_IG, URL_TWITTER } from '@/lib/constants';
 import { Box, chakra, Container, Stack, Text, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const SocialButton = ({ children, label, href }: { children: ReactNode; label: string; href: string }) => {
   return (
@@ -40,7 +38,7 @@ const Footer = (): JSX.Element => {
         align={{ base: 'center', md: 'center' }}
       >
         <Text>© 2021 teofilus.dev</Text>
-        <Stack direction={'row'} spacing={6}>
+        {/* <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Twitter'} href={URL_TWITTER}>
             <FaTwitter />
           </SocialButton>
@@ -50,7 +48,8 @@ const Footer = (): JSX.Element => {
           <SocialButton label={'Instagram'} href={URL_IG}>
             <FaInstagram />
           </SocialButton>
-        </Stack>
+        </Stack> */}
+        <Text>Wallet BEP20(BSC): 0xb1a70046e254daa7a452177ddd53046bcfc3721a</Text>
       </Container>
     </Box>
   );
