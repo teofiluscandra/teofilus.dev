@@ -229,9 +229,30 @@ const MainWedding = ({ isPawarta }: { isPawarta?: boolean }): JSX.Element => {
 
         <Box textAlign={'center'}>
           <Box as={ImBullhorn} color="secondary" fontSize="xl" display="inline-block" />
-          <Text mt="3" fontSize="xl" fontWeight="bold" maxW="30rem">
+          <Text my="3" fontSize="xl" fontWeight="bold" maxW="30rem">
             Bagi para tamu undangan diharapkan mengikuti protokol pencegahan COVID-19.
           </Text>
+          <Link
+            flex={1}
+            py={2}
+            px={10}
+            fontSize={'md'}
+            rounded={'full'}
+            bg={'primary'}
+            color={'white'}
+            _hover={{
+              bg: 'secondary',
+              color: 'black',
+            }}
+            _focus={{
+              bg: 'secondary',
+              color: 'black',
+            }}
+            href="https://youtu.be/3kh2NQWfn5I"
+            isExternal
+          >
+            Live Streaming
+          </Link>
         </Box>
       </Stack>
     </Layout>
