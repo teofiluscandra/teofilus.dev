@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { autoplayPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import { Alert, Box, Heading, Img, Link, Stack, StackDivider, Text, useColorModeValue } from '@chakra-ui/react';
+import { Alert, Box, Heading, Img, Stack, StackDivider, Text, useColorModeValue } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import { ImBullhorn, ImQuotesLeft } from 'react-icons/im';
 const Carousel = dynamic(() => import('@brainhubeu/react-carousel'), {
@@ -27,7 +27,7 @@ const Statement = ({ words }: { words: string }) => (
   </Box>
 );
 
-const EventDateBox = ({ isPawarta }: { isPawarta?: boolean }) => (
+const EventDateBox = () => (
   <Stack
     align={'center'}
     justify={'center'}
@@ -40,66 +40,10 @@ const EventDateBox = ({ isPawarta }: { isPawarta?: boolean }) => (
         <Text fontSize="xl" fontWeight="bold">
           Dhaup Suci
         </Text>
-        <Text>15.00 WIB</Text>
         <Text>Gereja Kristen Jawi Wetan</Text>
         <Text>Probolinggo</Text>
       </Box>
-      <Link
-        flex={1}
-        py={1}
-        px={10}
-        fontSize={'md'}
-        rounded={'full'}
-        bg={'primary'}
-        color={'white'}
-        _hover={{
-          bg: 'secondary',
-          color: 'black',
-        }}
-        _focus={{
-          bg: 'secondary',
-          color: 'black',
-        }}
-        href="https://goo.gl/maps/sWB7wZ6TGnx1RTkJ6"
-        isExternal
-      >
-        PETA
-      </Link>
     </Box>
-    {!isPawarta && (
-      <Box textAlign={'center'} w={'50%'}>
-        <Box mb={'1rem'}>
-          <Text fontSize="xl" fontWeight="bold">
-            Mangayu Bagya
-          </Text>
-          <Text>17.00 WIB - 20.00 WIB</Text>
-          <Text>Garden City Resto</Text>
-          <Text>Sebelah Terminal Bus - Probolinggo</Text>
-        </Box>
-
-        <Link
-          flex={1}
-          py={1}
-          px={10}
-          fontSize={'md'}
-          rounded={'full'}
-          bg={'primary'}
-          color={'white'}
-          _hover={{
-            bg: 'secondary',
-            color: 'black',
-          }}
-          _focus={{
-            bg: 'secondary',
-            color: 'black',
-          }}
-          href="https://goo.gl/maps/h7vz6yV49LvFQxo57"
-          isExternal
-        >
-          PETA
-        </Link>
-      </Box>
-    )}
   </Stack>
 );
 
@@ -114,11 +58,10 @@ const MainWedding = ({ isPawarta }: { isPawarta?: boolean }): JSX.Element => {
   return (
     <Layout title="💒 Pawiwahan Yunita & Teofilus" maxW={'2xl'}>
       <Stack spacing={8} w="100%" align="center">
-        {isPawarta && (
-          <Alert status="success" variant="subtle">
-            Kami tidak menyelenggarakan acara resepsi yang bersifat publik.
-          </Alert>
-        )}
+        <Alert status="success" variant="subtle">
+          Kami tidak menyelenggarakan acara resepsi yang bersifat publik untuk menghormati masa PPKM Darurat dan
+          mencegah penyebaran Covid-19.
+        </Alert>
 
         <PageHeading title="Pawiwahan" />
         <Box>
@@ -183,7 +126,7 @@ const MainWedding = ({ isPawarta }: { isPawarta?: boolean }): JSX.Element => {
           </Text>
         </Box>
 
-        <EventDateBox isPawarta={isPawarta} />
+        <EventDateBox />
 
         <Statement words={CloseStatement} />
 
@@ -230,29 +173,9 @@ const MainWedding = ({ isPawarta }: { isPawarta?: boolean }): JSX.Element => {
         <Box textAlign={'center'}>
           <Box as={ImBullhorn} color="secondary" fontSize="xl" display="inline-block" />
           <Text my="3" fontSize="xl" fontWeight="bold" maxW="30rem">
-            Bagi para tamu undangan diharapkan mengikuti protokol pencegahan COVID-19.
+            Bagi keluarga, diharapkan mengikuti protokol pencegahan COVID-19 dan himbauan PPKM Darurat mengenai resepsi
+            pernikahan.
           </Text>
-          <Link
-            flex={1}
-            py={2}
-            px={10}
-            fontSize={'md'}
-            rounded={'full'}
-            bg={'primary'}
-            color={'white'}
-            _hover={{
-              bg: 'secondary',
-              color: 'black',
-            }}
-            _focus={{
-              bg: 'secondary',
-              color: 'black',
-            }}
-            href="https://youtu.be/3kh2NQWfn5I"
-            isExternal
-          >
-            Live Streaming
-          </Link>
         </Box>
       </Stack>
     </Layout>

@@ -15,7 +15,6 @@ const Banner = (): JSX.Element => {
         alignItems="center"
       >
         <Link
-          href="https://youtu.be/3kh2NQWfn5I"
           d="flex"
           alignItems="center"
           py={2}
@@ -35,7 +34,7 @@ const Banner = (): JSX.Element => {
           }}
         >
           <FaDotCircle />
-          <Text ml="2">Live Streaming (3 July) Click Here</Text>
+          <Text ml="2">Sorry, no live stream.</Text>
         </Link>
       </Stack>
     </Box>
