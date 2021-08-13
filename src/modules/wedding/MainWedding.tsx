@@ -40,7 +40,7 @@ const EventDateBox = () => (
         <Text fontSize="xl" fontWeight="bold">
           Dhaup Suci
         </Text>
-        <Text>Gereja Kristen Jawi Wetan</Text>
+        <Text>Greja Kristen Jawi Wetan</Text>
         <Text>Probolinggo</Text>
       </Box>
     </Box>

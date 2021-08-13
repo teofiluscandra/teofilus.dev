@@ -32,7 +32,7 @@ const VaccineSection = (): JSX.Element => {
   return (
     <>
       <Heading as="h4" size="md" my="1rem">
-        Progres Vaksinasi COVID-19 di Indonesia
+        COVID-19 Vaccination in Indonesia
       </Heading>
       <Box w="100%" p={4} borderWidth="1px" borderRadius="lg">
         {isError && <Text>Something wrong ...</Text>}
@@ -40,12 +40,12 @@ const VaccineSection = (): JSX.Element => {
         {isSuccess && (
           <SimpleGrid spacing={5} columns={[1, 2]}>
             <GridBox
-              title="Vaksinasi Dosis 1"
+              title="First Dose"
               count={formatNumber(latestData.vaksinasi1)}
               percentage={latestData.cakupan.vaksinasi1}
             />
             <GridBox
-              title="Vaksinasi Dosis 2"
+              title="Second Dose"
               count={formatNumber(latestData.vaksinasi2)}
               percentage={latestData.cakupan.vaksinasi2}
             />
@@ -54,7 +54,7 @@ const VaccineSection = (): JSX.Element => {
       </Box>
       {isSuccess && (
         <Heading as="h6" size="xs" marginTop="1rem">
-          Pembaruan Terakhir : {format(parseISO(data.last_updated), 'dd-MM-yyyy hh:mm OOOO')}
+          Last Update : {format(parseISO(data.last_updated), 'dd-MM-yyyy hh:mm OOOO')}
         </Heading>
       )}
     </>
