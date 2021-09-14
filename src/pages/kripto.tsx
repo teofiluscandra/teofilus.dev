@@ -1,6 +1,7 @@
 import fetch from '@/lib/fetch';
 import {
   Badge,
+  Box,
   Button,
   ButtonGroup,
   Flex,
@@ -17,6 +18,7 @@ import {
 import { Layout } from 'components/layout';
 import { formatNumber } from 'lib/formatting';
 import { useState } from 'react';
+import { FaGasPump } from 'react-icons/fa';
 import { useQuery } from 'react-query';
 
 type Market = {
@@ -33,6 +35,11 @@ type Market = {
 
 const getMarkets = async (page: number) => {
   const URL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${page}&sparkline=false`;
+  return await fetch(URL);
+};
+
+const getGasFee = async () => {
+  const URL = `https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${process.env.API_KEY_ETHERSCAN}`;
   return await fetch(URL);
 };
 
@@ -64,9 +71,18 @@ const Kripto = (): JSX.Element => {
       refetchInterval: 3000,
     }
   );
+
+  const gasFeeQuery = useQuery(['gas_fee', page], () => getGasFee());
+
   return (
     <Layout title="Crypto Market" fontFamily="mono">
       {isFetching && <Spinner color="secondary" position="fixed" top={10} right={10} />}
+      <Box p={2} d="flex">
+        <FaGasPump />
+        <Box color="gray.500" fontWeight="semibold" letterSpacing="wide" fontSize="xs" textTransform="uppercase" ml="2">
+          {gasFeeQuery.data?.result.ProposeGasPrice} Gwei &bull; Average
+        </Box>
+      </Box>
       <Table variant="simple" mb="5">
         <Thead>
           <Tr>
@@ -80,7 +96,7 @@ const Kripto = (): JSX.Element => {
         </Thead>
         <Tbody>
           {isLoading && <Text>Loading ...</Text>}
-          {isError && <Text>Please try again.</Text>}
+          {(isError || gasFeeQuery.isError) && <Text>Please try again.</Text>}
           {isSuccess &&
             data?.map((market: Market) => (
               <Tr key={market.id}>
