@@ -27,7 +27,7 @@
     "@emotion/styled": "^11",
     "date-fns": "^2.23.0",
     "framer-motion": "^4.1.17",
-    "next": "^11.1.0",
+    "next": "^12.1.0",
     "next-seo": "^4.26.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
