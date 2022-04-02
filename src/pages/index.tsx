@@ -1,6 +1,6 @@
 import { Logo } from 'components/design-system';
 import { Layout } from 'components/layout';
-import { Hero, LinkSection, VaccineSection } from 'modules/home';
+import { Hero, LinkSection } from 'modules/home';
 
 // data structure
 const data = {
@@ -33,7 +33,6 @@ const Index = (): JSX.Element => {
     <Layout title="👋 Hello">
       <Logo boxSize="50px" mb="10px" />
       <Hero />
-      <VaccineSection />
       {/* Stay Update */}
       <LinkSection title={data.stayupdate.title} contents={data.stayupdate.contents} />
       {/* Public Announcement */}
