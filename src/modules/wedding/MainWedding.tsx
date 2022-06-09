@@ -67,7 +67,7 @@ const MainWedding = ({ isPawarta }: { isPawarta?: boolean }): JSX.Element => {
         <Box>
           <Img
             src="https://firebasestorage.googleapis.com/v0/b/teofiluscandra-mws.appspot.com/o/pawiwahan-webbanner.jpeg?alt=media&token=55f0a1f3-70d9-41df-90a2-3283aca6e734"
-            size="100%"
+            boxSize="100%"
             rounded="1rem"
             loading="eager"
             tabIndex={0}

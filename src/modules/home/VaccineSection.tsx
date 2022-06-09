@@ -31,7 +31,7 @@ const VaccineSection = (): JSX.Element => {
 
   return (
     <>
-      <Heading as="h4" size="md" my="1rem">
+      <Heading as="h4" boxSize="md" my="1rem">
         COVID-19 Vaccination in Indonesia
       </Heading>
       <Box w="100%" p={4} borderWidth="1px" borderRadius="lg">
@@ -53,7 +53,7 @@ const VaccineSection = (): JSX.Element => {
         )}
       </Box>
       {isSuccess && (
-        <Heading as="h6" size="xs" marginTop="1rem">
+        <Heading as="h6" boxSize="xs" marginTop="1rem">
           Last Update : {format(parseISO(data.last_updated), 'dd-MM-yyyy hh:mm OOOO')}
         </Heading>
       )}

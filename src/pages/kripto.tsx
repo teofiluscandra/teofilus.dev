@@ -77,7 +77,7 @@ const Kripto = (): JSX.Element => {
   return (
     <Layout title="Crypto Market" fontFamily="mono">
       {isFetching && <Spinner color="secondary" position="fixed" top={10} right={10} />}
-      <Box p={2} d="flex">
+      <Box p={2} display="flex">
         <FaGasPump />
         <Box color="gray.500" fontWeight="semibold" letterSpacing="wide" fontSize="xs" textTransform="uppercase" ml="2">
           {gasFeeQuery.data?.result.ProposeGasPrice} Gwei &bull; Average
@@ -121,7 +121,7 @@ const Kripto = (): JSX.Element => {
         </Tbody>
       </Table>
       <Flex align="center" justify="flex-end">
-        <ButtonGroup variant="outline" size="sm">
+        <ButtonGroup variant="outline" boxSize="sm">
           <Button onClick={previousPage} as="a" rel="prev" disabled={page === 1 ? true : false}>
             Previous
           </Button>

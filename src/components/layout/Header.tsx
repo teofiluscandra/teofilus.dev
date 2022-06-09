@@ -1,5 +1,6 @@
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { Box, Flex, Link, Text } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React, { ReactNode } from 'react';
 
 const Logo = () => {
@@ -21,7 +22,9 @@ interface MenuItemProps {
 const MenuItem = ({ children, isLast, to = '/', ...rest }: MenuItemProps) => {
   return (
     <Text mb={{ base: isLast ? 0 : 8, sm: 0 }} mr={{ base: 0, sm: isLast ? 0 : 8 }} display="block" {...rest}>
-      <Link to={to}>{children}</Link>
+      <NextLink href={to} passHref>
+        <Link>{children}</Link>
+      </NextLink>
     </Text>
   );
 };
