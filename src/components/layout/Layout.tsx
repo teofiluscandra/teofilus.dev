@@ -1,4 +1,3 @@
-import { DarkModeSwitch } from '@/components/design-system';
 import { Flex, FlexProps } from '@chakra-ui/react';
 import Head from 'next/head';
 import { ReactNode } from 'react';
@@ -18,7 +17,6 @@ const Layout = ({ children, title, ...props }: Props): JSX.Element => {
       <Flex maxWidth="1150px" w="100%" direction="column" mx="auto" px={5} pt={'10'} pb={5} minHeight="90vh" {...props}>
         {children}
       </Flex>
-      <DarkModeSwitch />
       <Footer />
     </>
   );

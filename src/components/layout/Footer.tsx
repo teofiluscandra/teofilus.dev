@@ -1,32 +1,43 @@
-import { Box, Container, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { ButtonGroup, Container, IconButton, Stack, Text } from '@chakra-ui/react';
+import { FaGithub, FaMastodon, FaTwitter } from 'react-icons/fa';
 
 const Footer = (): JSX.Element => {
   return (
-    <Box bg={useColorModeValue('gray.50', 'gray.900')} color={useColorModeValue('gray.700', 'gray.200')}>
-      <Container
-        as={Stack}
-        maxW={'6xl'}
-        py={4}
-        direction={{ base: 'column', md: 'row' }}
-        spacing={4}
-        justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}
-      >
-        <Text>© 2021 teofilus.dev</Text>
-        {/* <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Twitter'} href={URL_TWITTER}>
-            <FaTwitter />
-          </SocialButton>
-          <SocialButton label={'Github'} href={URL_GITHUB}>
-            <FaGithub />
-          </SocialButton>
-          <SocialButton label={'Instagram'} href={URL_IG}>
-            <FaInstagram />
-          </SocialButton>
-        </Stack> */}
-        <Text>Wallet BEP20(BSC): 0xb1a70046e254daa7a452177ddd53046bcfc3721a</Text>
-      </Container>
-    </Box>
+    <Container as="footer" role="contentinfo" py={{ base: '12', md: '16' }}>
+      <Stack spacing={1} align="center">
+        <Text fontSize="sm" color="subtle">
+          Made using Next.js and Chakra UI
+        </Text>
+        <Text fontSize="sm" color="subtle">
+          &copy; {new Date().getFullYear()} Teofilus Candra
+        </Text>
+        <Stack direction="row" align="center">
+          <ButtonGroup variant="ghost">
+            <IconButton
+              as="a"
+              href="https://mastodon.social/@teofilus"
+              aria-label="LinkedIn"
+              target="_blank"
+              icon={<FaMastodon fontSize="1.25rem" />}
+            />
+            <IconButton
+              as="a"
+              href="https://github.com/teofiluscandra"
+              aria-label="GitHub"
+              target="_blank"
+              icon={<FaGithub fontSize="1.25rem" />}
+            />
+            <IconButton
+              as="a"
+              href="https://twitter.com/_teofiluscandra"
+              aria-label="Twitter"
+              target="_blank"
+              icon={<FaTwitter fontSize="1.25rem" />}
+            />
+          </ButtonGroup>
+        </Stack>
+      </Stack>
+    </Container>
   );
 };
 

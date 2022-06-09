@@ -1,10 +1,12 @@
 import { extendTheme, theme as chakraTheme } from '@chakra-ui/react';
 
-const theme = extendTheme({
+const config = {
+  config: {
+    initialColorMode: 'dark',
+  },
   fonts: {
-    ...chakraTheme.fonts,
-    body: `Gentium Book Basic, -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
-    heading: `Gentium Book Basic,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+    body: `Lato, -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+    heading: `Lato,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
     mono: 'Menlo, monospace',
     mont: 'Montserrat, sans-serif',
   },
@@ -18,6 +20,7 @@ const theme = extendTheme({
     primary: '#ff6961',
     secondary: '#fdfd96',
   },
-});
+};
 
+const theme = extendTheme(config);
 export default theme;
