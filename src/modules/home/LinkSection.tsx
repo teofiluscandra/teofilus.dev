@@ -38,7 +38,7 @@ const GridBox = ({ category, title, desc, link }: Props): JSX.Element => {
 const LinkSection = ({ title, contents }: SectionProps): JSX.Element => {
   return (
     <>
-      <Heading as="h4" boxSize="md" mb="1rem" mt="2rem">
+      <Heading as="h4" mb="1rem" mt="2rem">
         {title}
       </Heading>
       <Box w="100%" p={4} borderWidth="1px" borderRadius="lg">

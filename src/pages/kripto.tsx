@@ -121,7 +121,7 @@ const Kripto = (): JSX.Element => {
         </Tbody>
       </Table>
       <Flex align="center" justify="flex-end">
-        <ButtonGroup variant="outline" boxSize="sm">
+        <ButtonGroup variant="outline">
           <Button onClick={previousPage} as="a" rel="prev" disabled={page === 1 ? true : false}>
             Previous
           </Button>
