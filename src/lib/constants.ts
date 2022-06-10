@@ -2,6 +2,7 @@ export const NAME = 'Teofilus Candra';
 export const DESC = '';
 export const URL_PHOTO = '/static/logo-64x64.png';
 export const URL_ICON = '/static/worldwide.png';
+export const PROFILE_PIC = '/static/profile_pic.jpg'
 export const SHORT_DESC = 'Everyday LOL';
 export const URL_GITHUB = 'https://github.com/teofiluscandra';
 export const URL_FACEBOOK = 'https://www.facebook.com/teofiluscandra';

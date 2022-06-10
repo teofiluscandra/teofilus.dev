@@ -17,8 +17,8 @@ const config = {
     bold: 700,
   },
   colors: {
-    primary: '#ff6961',
-    secondary: '#fdfd96',
+    primary: chakraTheme.colors.red[500],
+    secondary: chakraTheme.colors.yellow[500],
   },
 };
 

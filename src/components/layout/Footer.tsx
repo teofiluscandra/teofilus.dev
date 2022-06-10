@@ -3,7 +3,7 @@ import { FaGithub, FaMastodon, FaTwitter } from 'react-icons/fa';
 
 const Footer = (): JSX.Element => {
   return (
-    <Container as="footer" role="contentinfo" py={{ base: '12', md: '16' }}>
+    <Container as="footer" role="contentinfo" py={{ base: '12', md: '16' }} mb="30">
       <Stack spacing={1} align="center">
         <Text fontSize="sm" color="subtle">
           Made using Next.js and Chakra UI
@@ -13,13 +13,6 @@ const Footer = (): JSX.Element => {
         </Text>
         <Stack direction="row" align="center">
           <ButtonGroup variant="ghost">
-            <IconButton
-              as="a"
-              href="https://mastodon.social/@teofilus"
-              aria-label="LinkedIn"
-              target="_blank"
-              icon={<FaMastodon fontSize="1.25rem" />}
-            />
             <IconButton
               as="a"
               href="https://github.com/teofiluscandra"
@@ -33,6 +26,13 @@ const Footer = (): JSX.Element => {
               aria-label="Twitter"
               target="_blank"
               icon={<FaTwitter fontSize="1.25rem" />}
+            />
+            <IconButton
+              as="a"
+              href="https://mastodon.social/@teofilus"
+              aria-label="LinkedIn"
+              target="_blank"
+              icon={<FaMastodon fontSize="1.25rem" />}
             />
           </ButtonGroup>
         </Stack>
