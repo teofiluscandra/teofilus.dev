@@ -24,7 +24,7 @@ const data = {
     ],
     detail: {
       title: 'View all projects →',
-      href: '/work',
+      href: '/projects',
     },
   },
   announcement: {
