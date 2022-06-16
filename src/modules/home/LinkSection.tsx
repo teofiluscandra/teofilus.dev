@@ -1,60 +1,74 @@
-import { Badge, Box, Heading, SimpleGrid, Text } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Badge, Box, Flex, Heading, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 type Props = {
   category?: string;
   title?: string;
   desc?: string;
   link: string;
+  external?: boolean;
 };
 
 type SectionProps = {
   title: string;
   contents: Props[];
+  detail?: {
+    title: string;
+    href: string;
+  };
 };
 
-const GridBox = ({ category, title, desc, link }: Props): JSX.Element => {
+const GridBox = ({ category, title, desc, link, external }: Props): JSX.Element => {
   return (
-    <Link href={link}>
+    <NextLink href={link} passHref>
       <Box
-        as="button"
+        as="a"
+        target={external ? '_blank' : '_self'}
         _hover={{ backgroundColor: 'primary' }}
-        p="5"
+        p="3"
         shadow="md"
         textAlign="center"
         borderWidth="1px"
         borderRadius="lg"
       >
-        <Badge colorScheme="pink">{category}</Badge>
-        <Heading fontSize="4xl" fontFamily="mono">
-          {title}
-        </Heading>
-        <Text fontSize="md">{desc}</Text>
+        <Stack spacing={1} align="start">
+          <Badge variant="outline" colorScheme="yellow">
+            {category}
+          </Badge>
+          <Heading fontSize="4xl" fontFamily="mono">
+            {title}
+          </Heading>
+          <Text fontSize="md">{desc}</Text>
+        </Stack>
       </Box>
-    </Link>
+    </NextLink>
   );
 };
 
-const LinkSection = ({ title, contents }: SectionProps): JSX.Element => {
+const LinkSection = ({ title, contents, detail }: SectionProps): JSX.Element => {
   return (
-    <>
-      <Heading as="h4" size="md" mb="1rem" mt="2rem">
+    <Stack as="section" py={2} spacing={4}>
+      <Heading as="h4" size="md">
         {title}
       </Heading>
-      <Box w="100%" p={4} borderWidth="1px" borderRadius="lg">
-        <SimpleGrid spacing={5} columns={[1, 2]}>
-          {contents.map((content, index) => (
-            <GridBox
-              key={index}
-              link={content.link}
-              title={content.title}
-              category={content.category}
-              desc={content.desc}
-            />
-          ))}
-        </SimpleGrid>
-      </Box>
-    </>
+      <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: '2', md: '4' }}>
+        {contents.map((content, index) => (
+          <GridBox
+            key={index}
+            link={content.link}
+            title={content.title}
+            category={content.category}
+            desc={content.desc}
+            external={content.external}
+          />
+        ))}
+      </SimpleGrid>
+      <Flex justifyContent="flex-end" mt="2">
+        <NextLink href={detail?.href ?? '#'} passHref>
+          <Link>{detail?.title}</Link>
+        </NextLink>
+      </Flex>
+    </Stack>
   );
 };
 

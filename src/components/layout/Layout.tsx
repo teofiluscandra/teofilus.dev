@@ -15,7 +15,17 @@ const Layout = ({ children, title, ...props }: Props): JSX.Element => {
       <Head>
         <title>{title}</title>
       </Head>
-      <Flex maxWidth={title === 'Crypto Market' ? "1020" : "2xl"} w="100%" direction="column" mx="auto" px={5} pt={'10'} pb={5} minHeight="1vh" {...props}>
+      <Flex
+        maxWidth={title === 'Crypto Market' ? '1020' : '3xl'}
+        w="100%"
+        direction="column"
+        mx="auto"
+        px={5}
+        pt={'10'}
+        pb={5}
+        minHeight="1vh"
+        {...props}
+      >
         {children}
         <Footer />
       </Flex>

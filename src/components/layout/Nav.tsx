@@ -14,13 +14,18 @@ const links: NavigationItem[] = [
     href: '/about',
   },
   {
-    name: 'Works',
+    name: 'Projects',
+    href: '/projects',
+  },
+  {
+    name: 'Activity',
     href: 'https://works.teofilus.dev',
     external: true,
   },
   {
-    name: 'Contact',
-    href: '/contact',
+    name: 'Bookmarks',
+    href: 'https://www.instapaper.com/p/teofilus',
+    external: true,
   },
 ];
 
@@ -44,10 +49,14 @@ export function Nav() {
           bgGradient: 'linear(to-l, red.500, yellow.500)',
         }}
       >
-        <Avatar size={'sm'} src={PROFILE_PIC} />
+        <NextLink href="/" passHref>
+          <Link>
+            <Avatar size={'sm'} src={PROFILE_PIC} />
+          </Link>
+        </NextLink>
         <HStack>
           {links.map(link => (
-            <NextLink href={link.href} passHref>
+            <NextLink href={link.href} key={link.name} passHref>
               <Link color={'blackAlpha.800'} isExternal={link.external}>
                 {link.name}
               </Link>

@@ -6,7 +6,7 @@ import { Hero, LinkSection } from '../modules/home';
 // data structure
 const data = {
   stayupdate: {
-    title: 'Stay Update',
+    title: 'Projects',
     contents: [
       {
         category: 'blockchain',
@@ -14,7 +14,18 @@ const data = {
         desc: 'check crypto prices regularly',
         link: '/kripto',
       },
+      {
+        category: 'web',
+        title: 'Lapak Sawiran',
+        desc: 'A cooperative marketplace.',
+        link: 'https://lapaksawiran.com',
+        external: true,
+      },
     ],
+    detail: {
+      title: 'View all projects →',
+      href: '/work',
+    },
   },
   announcement: {
     title: 'Public Announcement',
@@ -36,7 +47,11 @@ const Index = (): JSX.Element => {
         <Logo boxSize="50px" mb="10px" />
         <Hero />
         {/* Stay Update */}
-        <LinkSection title={data.stayupdate.title} contents={data.stayupdate.contents} />
+        <LinkSection
+          title={data.stayupdate.title}
+          contents={data.stayupdate.contents}
+          detail={data.stayupdate.detail}
+        />
         {/* Public Announcement */}
         <LinkSection title={data.announcement.title} contents={data.announcement.contents} />
       </Container>
