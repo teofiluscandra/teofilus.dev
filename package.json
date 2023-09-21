@@ -27,7 +27,7 @@
     "@emotion/styled": "^11",
     "date-fns": "^2.23.0",
     "framer-motion": "^6.3.11",
-    "graphql": "^16.5.0",
+    "graphql": "^16.8.1",
     "graphql-request": "^4.3.0",
     "next": "^12.1.6",
     "next-mdx-remote": "^4.0.3",
